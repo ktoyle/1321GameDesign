@@ -1,7 +1,7 @@
 
 import java.util.Random;
 class NPC {
-     int healthpoints;
+    public int healthpoints;
      public int attack;
      public int exp;
      public int defense;
