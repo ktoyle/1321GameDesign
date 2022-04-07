@@ -49,6 +49,8 @@ if (number >=5){
 
 
  class Player extends NPC {
+     
+    public int expcost=100;
      public Player(int attack, int healthpoints, int defense){
        this.attack=attack;
            this.healthpoints=healthpoints;
