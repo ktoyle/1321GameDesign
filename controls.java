@@ -33,18 +33,18 @@ public class reservoir{
 
         String choice;
 
-       int a = 0;
+       int turnsPassed = 0;
 
 
 
-        while(a < 5){
+        while(turnsPassed < 5){
 
 
 
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
-            System.out.print(a);
+            System.out.print(turnsPassed);
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
@@ -68,20 +68,20 @@ public class reservoir{
                 int num=scanner();
 
                 player.upgrade(num);
-                a--;
+                turnsPassed--;
             }
             else if (choice.equals("s")){
 
                player.Store();
-               a--;
+               turnsPassed--;
 
             }
 
-            a++;
+            turnsPassed++;
 player.multiply();
         }
 
-        t.setTurn(a);
+        t.setTurn(turnsPassed);
 
         return t.getTurn();
 
@@ -96,11 +96,11 @@ player.multiply();
 
         String choice;
 
-        int a = 5;
+        int turnsPassed = 5;
 
 
 
-        while(a < 10){
+        while(turnsPassed < 10){
 
 
 
@@ -133,11 +133,11 @@ System.out.print(a);
                 player.upgrade(num);
             }
             System.out.println("Here");
-            a++;
+            turnsPassed++;
 
         }
 
-        t.setTurn(a);
+        t.setTurn(turnsPassed);
 
         return t.getTurn();
 
@@ -152,10 +152,10 @@ System.out.print(a);
 
 
 
-        int z = reservoir.currentTurn(0)  ;
+        int turnsPassed = reservoir.currentTurn(0)  ;
 
 
-        for (int i = 0; i < z; i++ ){
+        for (int i = 0; i < turnsPassed; i++ ){
 
 
             playerCurrentExp = (playerCurrentExp + (playerCurrentExp * interestRate));
@@ -172,10 +172,10 @@ System.out.print(a);
 
 
 
-        int z = reservoir.currentTurn(0)  ;
+        int turnsPassed = reservoir.currentTurn(0)  ;
 
 
-        for (int i = 0; i < z; i++ ){
+        for (int i = 0; i < turnsPassed; i++ ){
 
             if (turnCount % 4 == 0){
                 currentPrice = (currentPrice + (currentPrice * inflationRate));
