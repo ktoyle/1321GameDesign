@@ -8,7 +8,7 @@ public class reservoir{
     public  float interestRate;
     public float inflationRate;
 
-   public reservoir() {
+    public reservoir() {
 
         turnCount = 0;
         playerCurrentExp = 1;
@@ -16,97 +16,111 @@ public class reservoir{
         interestRate = .5f;
         inflationRate = .3f;
 
-   }
+    }
+    public static int scanner(){
+        Scanner sc = new Scanner(System.in);
+        int choice=0;
+        choice=sc.nextInt();
 
-   public static int currentTurn(int a){
+        return choice;
+    }
 
-       Scanner sc = new Scanner(System.in);
+    public int currentTurn(Player player){
 
-    turncount T = new turncount();
+        Scanner sc = new Scanner(System.in);
 
-       String choice;
+        turncount T = new turncount();
 
-        a = 0;
+        String choice;
 
-
-
-       while(a < 5){
-
-
-
-           System.out.println("Where do you want to go");
-
-           choice = sc.nextLine();
-
-           if (choice.equals("f")){
-
-               System.out.println("You went forward");
-
-
-           }
-           else if (choice.equals("l")){
-               System.out.println("You went left");
-
-           }
-
-           else if (choice.equals("r")){
-               System.out.println("You went right");
-
-
-           }
-
-           a++;
-       }
-
-       T.setTurn(a);
-
-       return T.getTurn();
+       int a = 0;
 
 
 
-
-   }
-
+        while(a < 5){
 
 
-       public  float exp(){
+
+            System.out.println("Where do you want to go");
+
+            choice = sc.nextLine();
+
+            if (choice.equals("f")){
+
+                System.out.println("You went forward");
+
+
+            }
+            else if (choice.equals("l")){
+                System.out.println("You went left");
+
+            }
+
+            else if (choice.equals("r")){
+                System.out.println("You went right");
+
+
+            }
+            else if (choice.equals("u")){
+
+
+                player.upgrade();
+                int num=scanner();
+
+                player.upgrade(num);
+            }
+            System.out.println("Here");
+            a++;
+        }
+
+        T.setTurn(a);
+
+        return T.getTurn();
+
+
+
+
+    }}
+
+
+
+   /* public  float exp(){
 
 
 
         int z = reservoir.currentTurn(0)  ;
 
 
-           for (int i = 0; i < z; i++ ){
+        for (int i = 0; i < z; i++ ){
 
 
-               playerCurrentExp = (playerCurrentExp + (playerCurrentExp * interestRate));
-           }
-
-
-
-
-    return playerCurrentExp ;
-
-   }
-
-   public float price(){
+            playerCurrentExp = (playerCurrentExp + (playerCurrentExp * interestRate));
+        }
 
 
 
-       int z = reservoir.currentTurn(0)  ;
+
+        return playerCurrentExp ;
+
+    }
+
+    public float price(){
 
 
-       for (int i = 0; i < z; i++ ){
 
-           if (turnCount % 4 == 0){
-               currentPrice = (currentPrice + (currentPrice * inflationRate));
-           }
-       }
-
-              return currentPrice;
-
-           }
+        int z = reservoir.currentTurn(0)  ;
 
 
-   }
+        for (int i = 0; i < z; i++ ){
 
+            if (turnCount % 4 == 0){
+                currentPrice = (currentPrice + (currentPrice * inflationRate));
+            }
+        }
+
+        return currentPrice;
+
+    }
+
+
+}*/
