@@ -1,5 +1,7 @@
 
 import java.util.Random;
+import java.util.Scanner;
+
 class NPC {
     private int healthpoints;
     private int attack;
@@ -10,9 +12,13 @@ class NPC {
         this.attack = attack;
         this.healthpoints = healthpoints;
         this.defense = defense;
-        exp = 1000;
+        exp = 0;
     }
+    public NPC() {
 
+
+
+    }
 
     public int newHealth(int attack) {
         healthpoints = healthpoints - attack;
@@ -77,12 +83,18 @@ class NPC {
         this.defense = defense + this.defense;
         return this.defense;
     }
+
 }
 
     class Player extends NPC {
-
+public int stored2=0;
+public float mult=1.2f;
         public int expcost = 100;
+        public Player() {
+            super();
 
+
+        }
         public Player(int attack, int healthpoints, int defense) {
             super(attack, healthpoints, defense);
 
@@ -93,13 +105,40 @@ class NPC {
             expcost = (int) (expcost * 1.2);
             return expcost;
         }
+        public int multiply() {
+            stored2*=1.2;
 
-        public void upgrade() {
+            return stored2;
+        }
+
+        public void Store() {
+            Scanner scan= new Scanner(System.in);
+            int choice;
+            System.out.print("");
+            choice=scan.nextInt();
+switch(choice) {
+
+    case 1:
+    System.out.print("");
+    int stored = 0;
+    stored = scan.nextInt();
+    int exp = super.exp();
+    exp = exp - stored;
+
+    stored2 += stored;
+    newexp(exp);
+    break;
+
+    default: break;
+}
+        }
+        public  void upgrade() {
             int exp= super.exp();
             System.out.print("You have " + exp);
         }
 
-        public int upgrade(int choice) {
+        public void upgrade(int choice) {
+
             int exp = super.exp();
             switch (choice) {
                 case 1:
@@ -138,8 +177,10 @@ class NPC {
                     break;
                 default:
                     break;
+
+
             }
-            return choice;
+
         }
     }
 
@@ -149,4 +190,6 @@ class NPC {
         }
 
 
+
     }
+    
