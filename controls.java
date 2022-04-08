@@ -25,11 +25,11 @@ public class reservoir{
         return choice;
     }
 
-    public int currentTurn(Player player){
+    public int currentTurn(turncount t, Player player){
 
         Scanner sc = new Scanner(System.in);
 
-        turncount T = new turncount();
+
 
         String choice;
 
@@ -44,7 +44,70 @@ public class reservoir{
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
+            System.out.print(a);
+            if (choice.equals("f")){
 
+                System.out.println("You went forward");
+
+
+            }
+            else if (choice.equals("l")){
+                System.out.println("You went left");
+
+            }
+
+            else if (choice.equals("r")){
+                System.out.println("You went right");
+
+
+            }
+            else if (choice.equals("u")){
+
+
+                player.upgrade();
+                int num=scanner();
+
+                player.upgrade(num);
+                a--;
+            }
+            else if (choice.equals("s")){
+
+               player.Store();
+               a--;
+
+            }
+
+            a++;
+player.multiply();
+        }
+
+        t.setTurn(a);
+
+        return t.getTurn();
+
+
+
+    }
+    public int level2(turncount t, Player player){
+
+        Scanner sc = new Scanner(System.in);
+
+
+
+        String choice;
+
+        int a = 5;
+
+
+
+        while(a < 10){
+
+
+
+            System.out.println("Where do you want to go");
+
+            choice = sc.nextLine();
+System.out.print(a);
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
@@ -71,16 +134,17 @@ public class reservoir{
             }
             System.out.println("Here");
             a++;
+
         }
 
-        T.setTurn(a);
+        t.setTurn(a);
 
-        return T.getTurn();
-
+        return t.getTurn();
 
 
 
     }}
+
 
 
 
