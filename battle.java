@@ -1,40 +1,48 @@
-
- class Combat {
-    public String battle(Player player,Enemies enemies){
+class Combat {
+    public String battle(Player player,Enemies enemies,int num1){
        String battle="";
 
         player.health(player);
-        while(!battle.equals("win") && !battle.equals("lose")){
+        while(!battle.equals("cont")&&!battle.equals("win") && !battle.equals("lose")){
             String choice;
             String choice2;
-            String choice3;
-            choice=player.choice();
+            String choice3="";
+
+            choice=player.choice(num1);
             choice2= enemies.decison();
-           choice3= player.action(player,enemies,choice,choice2);
 
 
+            if (num1==0) {
+                choice3 = player.action(player, enemies, choice, choice2,num1);
+            }
+            else if (num1==1) {
+                choice3 = player.action(player, enemies, choice, choice2,num1);
+            }
             if(player.healthpoints()<=0){
                 battle="lose";
                 System.out.print("You lost game over");
             }
            else if(enemies.healthpoints()<=0){
-                battle="win";
+               if(num1==0){
+                   battle="cont";
+               }
+               if(num1==1){
+                battle="win";}
                 enemies.battlewon(player);
-                System.out.print("You won and earned "+ enemies.battlewon(player));
+                System.out.println("You won and earned "+ enemies.battlewon(player)+ " exp");
             }
             else if (choice3.equals("success")){
 
                 break;
             }
            else if(player.healthpoints()>0&& enemies.healthpoints()>0){
-                System.out.print("You have "+ player.healthpoints()+" left");
-                System.out.print("The enemy has " + enemies.healthpoints()+" left");
+                System.out.println("You have "+ player.healthpoints()+" health left");
+                System.out.println("The enemy has " + enemies.healthpoints()+" health left");
             }
 
         }
-
+player.fullheal(player);
 
         return battle;
-    }
+    }}
 
-}
