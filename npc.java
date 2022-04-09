@@ -1,6 +1,8 @@
 
 
 
+
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -198,10 +200,22 @@ switch(choice) {
 
         }
 
-        public String choice(){
-            System.out.println("You have entered a battle. ");
+        public String choice(int num){
+            if(num==0){
+            System.out.println("You have entered a battle. ");}
+          else  if(num==1){
+                System.out.println("You have entered a boss battle. ");
+            }
             Scanner scan=new Scanner(System.in);
             String choice;
+            if(num==0){
+                System.out.println("Would you like to attack, defend, or run");
+                choice=scan.nextLine();
+            }
+           else  if(num==1){
+                System.out.println("Would you like to attack or defend");
+                choice=scan.nextLine();
+            }
             System.out.println("Would you like to attack, defend, or run");
             choice=scan.nextLine();
             while (!choice.equals("attack")&&!choice.equals("defend")&&!choice.equals("run")){
@@ -210,19 +224,8 @@ switch(choice) {
             }
             return choice;
         }
-        public String choice2(){
-            System.out.println("You have entered a battle. ");
-            Scanner scan=new Scanner(System.in);
-            String choice;
-            System.out.println("Would you like to attack or defend");
-            choice=scan.nextLine();
-            while (!choice.equals("attack")&&!choice.equals("defend")){
-                System.out.println("That is not a valid choice enter attack or defend");
-                choice=scan.nextLine();
-            }
-            return choice;
-        }
-        public String action(Player player, Enemies enemy , String choice,String Enemychoice){
+      
+        public String action(Player player, Enemies enemy , String choice,String Enemychoice,int num){
             String run="fail";
             if (choice.equals("attack")&&Enemychoice.equals(("attack"))){
                 enemy.newHealth(player.attack());
@@ -240,8 +243,37 @@ player.defend(enemy.attack());
                 System.out.println("The enemy defended and took "+enemy.def()+" damage");
             }
           else if(choice.equals("run")){
-              run=player.run();
+              if(num==0) {
+                  run = player.run();
+              }
+              if(num==1){
+                  while(choice.equals("run")){
+                  System.out.print("You cant run from the boss either attack or defend");
+                  run="fail";
+                  Scanner scan=new Scanner(System.in);
+                  choice=scan.nextLine();
 
+                      if (choice.equals("attack")&&Enemychoice.equals(("attack"))){
+                          enemy.newHealth(player.attack());
+                          player.newhealth(enemy.attack());
+                          System.out.println("You did "+player.attack()+" damage");
+                          System.out.println("The enemy did "+enemy.attack()+" damage");
+                      }
+
+                      else if (choice.equals("defend")&&Enemychoice.equals("attack")){
+                          player.defend(enemy.attack());
+                          System.out.println("You defended and took "+player.def()+" damage");
+                      }
+                      else if (choice.equals("attack")&&Enemychoice.equals("defend")) {
+                          enemy.defend(player.attack());
+                          System.out.println("The enemy defended and took " + enemy.def() + " damage");
+                      }
+                              else if(choice.equals("defend")&&Enemychoice.equals("defend")){
+                              System.out.println("You both defended");
+                              }
+
+                  }
+              }
             }
           else if(choice.equals("defend")&&Enemychoice.equals("defend")){
                 System.out.println("You both defended");
@@ -250,6 +282,8 @@ player.defend(enemy.attack());
 
           return run;
         }
+
+
         public int health (Player player){
             health=player.healthpoints();
             return health;
@@ -286,3 +320,5 @@ public int battlewon(Player player){
 
 
 }
+
+
