@@ -107,7 +107,7 @@ player.multiply();
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
-System.out.print(a);
+System.out.print(turnsPassed);
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
