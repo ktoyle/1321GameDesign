@@ -29,22 +29,22 @@ public class reservoir{
 
         Scanner sc = new Scanner(System.in);
 
-
+Enemies enemy1=new Enemies(3,3,3);
 
         String choice;
 
-       int turnsPassed = 0;
+       int a = 0;
+       Combat com=new Combat();
+        String cont="";
 
+        while(a < 10&& !cont.equals("lose")&&!cont.equals("win")){
 
-
-        while(turnsPassed < 5){
-
-
+            com.battle(player,enemy1,0);
 
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
-            System.out.print(turnsPassed);
+            System.out.print(a);
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
@@ -68,20 +68,27 @@ public class reservoir{
                 int num=scanner();
 
                 player.upgrade(num);
-                turnsPassed--;
+                continue;
             }
             else if (choice.equals("s")){
 
                player.Store();
-               turnsPassed--;
+               continue;
 
             }
 
-            turnsPassed++;
+            a++;
 player.multiply();
+if(!cont.equals("lose")){
+    if(a==3){
+       cont=com.battle(player,enemy1,1);
+    }
+
+            }
+
         }
 
-        t.setTurn(turnsPassed);
+        t.setTurn(a);
 
         return t.getTurn();
 
@@ -96,18 +103,18 @@ player.multiply();
 
         String choice;
 
-        int turnsPassed = 5;
+        int a = 5;
 
 
 
-        while(turnsPassed < 10){
+        while(a < 10){
 
 
 
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
-System.out.print(turnsPassed);
+System.out.print(a);
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
@@ -133,11 +140,11 @@ System.out.print(turnsPassed);
                 player.upgrade(num);
             }
             System.out.println("Here");
-            turnsPassed++;
+            a++;
 
         }
 
-        t.setTurn(turnsPassed);
+        t.setTurn(a);
 
         return t.getTurn();
 
@@ -152,10 +159,10 @@ System.out.print(turnsPassed);
 
 
 
-        int turnsPassed = reservoir.currentTurn(0)  ;
+        int z = reservoir.currentTurn(0)  ;
 
 
-        for (int i = 0; i < turnsPassed; i++ ){
+        for (int i = 0; i < z; i++ ){
 
 
             playerCurrentExp = (playerCurrentExp + (playerCurrentExp * interestRate));
@@ -172,10 +179,10 @@ System.out.print(turnsPassed);
 
 
 
-        int turnsPassed = reservoir.currentTurn(0)  ;
+        int z = reservoir.currentTurn(0)  ;
 
 
-        for (int i = 0; i < turnsPassed; i++ ){
+        for (int i = 0; i < z; i++ ){
 
             if (turnCount % 4 == 0){
                 currentPrice = (currentPrice + (currentPrice * inflationRate));
