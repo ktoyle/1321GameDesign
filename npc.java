@@ -1,4 +1,6 @@
 
+
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,7 +9,7 @@ class NPC {
     private int attack;
     private int exp;
     private int defense;
-
+private int defendamount;
     public NPC(int attack, int healthpoints, int defense) {
         this.attack = attack;
         this.healthpoints = healthpoints;
@@ -16,13 +18,22 @@ class NPC {
     }
     public NPC() {
 
-
-
+    }
+    public int originalhealth(int health){
+        healthpoints=health;
+        return healthpoints;
     }
 
     public int newHealth(int attack) {
         healthpoints = healthpoints - attack;
         return healthpoints;
+    }
+    public int defendamount(int attack){
+        defendamount=attack;
+        return defendamount;
+    }
+    public int def(){
+        return defendamount;
     }
 
     public int defend(int attack) {
@@ -30,6 +41,7 @@ class NPC {
         if (attack < 0) {
             attack = 0;
         }
+        defendamount(attack);
         healthpoints = healthpoints - attack;
         return healthpoints;
     }
@@ -40,9 +52,11 @@ class NPC {
         int number = rand.nextInt(10) + 1;
         if (number < 5) {
             chance = "fail";
+            System.out.println("you failed to run");
         }
         if (number >= 5) {
             chance = "success";
+            System.out.println("you were successful in escaping");
         }
         return chance;
     }
@@ -89,6 +103,7 @@ class NPC {
     class Player extends NPC {
 public int stored2=0;
 public float mult=1.2f;
+public int health;
         public int expcost = 100;
         public Player() {
             super();
@@ -182,14 +197,92 @@ switch(choice) {
             }
 
         }
+
+        public String choice(){
+            System.out.println("You have entered a battle. ");
+            Scanner scan=new Scanner(System.in);
+            String choice;
+            System.out.println("Would you like to attack, defend, or run");
+            choice=scan.nextLine();
+            while (!choice.equals("attack")&&!choice.equals("defend")&&!choice.equals("run")){
+                System.out.println("That is not a valid choice enter attack,defend, or run ");
+                choice=scan.nextLine();
+            }
+            return choice;
+        }
+        public String choice2(){
+            System.out.println("You have entered a battle. ");
+            Scanner scan=new Scanner(System.in);
+            String choice;
+            System.out.println("Would you like to attack or defend");
+            choice=scan.nextLine();
+            while (!choice.equals("attack")&&!choice.equals("defend")){
+                System.out.println("That is not a valid choice enter attack or defend");
+                choice=scan.nextLine();
+            }
+            return choice;
+        }
+        public String action(Player player, Enemies enemy , String choice,String Enemychoice){
+            String run="fail";
+            if (choice.equals("attack")&&Enemychoice.equals(("attack"))){
+                enemy.newHealth(player.attack());
+                player.newhealth(enemy.attack());
+                System.out.println("You did "+player.attack()+" damage");
+                System.out.println("The enemy did "+enemy.attack()+" damage");
+            }
+
+          else if (choice.equals("defend")&&Enemychoice.equals("attack")){
+player.defend(enemy.attack());
+                System.out.println("You defended and took "+player.def()+" damage");
+            }
+            else if (choice.equals("attack")&&Enemychoice.equals("defend")){
+                enemy.defend(player.attack());
+                System.out.println("The enemy defended and took "+enemy.def()+" damage");
+            }
+          else if(choice.equals("run")){
+              run=player.run();
+
+            }
+          else if(choice.equals("defend")&&Enemychoice.equals("defend")){
+                System.out.println("You both defended");
+
+            }
+
+          return run;
+        }
+        public int health (Player player){
+            health=player.healthpoints();
+            return health;
+        }
+
+        public void fullheal(Player player){
+            player.originalhealth(health);
+
+        }
     }
 
     class Enemies extends NPC {
         public Enemies(int attack, int healthpoints, int defense) {
             super(attack, healthpoints, defense);
         }
+        public String decison(){
+            Random rand = new Random();
+            int number = rand.nextInt(10) + 1;
+            String choice="";
+            if (number < 5) {
+              choice="attack";
+            }
+           else if (number >= 5) {
+               choice= "defend";
+            }
+            return choice;
+        }
+public int battlewon(Player player){
+            int exp=100;
+            player.newexp(exp);
+            return exp;
+}
 
 
 
-    }
-    
+}
