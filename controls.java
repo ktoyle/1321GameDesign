@@ -30,7 +30,7 @@ public class controls{
         Scanner sc = new Scanner(System.in);
 Enemies normal= new Enemies(4,8,5);
 Enemies boss=new Enemies(8,15,6);
-
+chest chest=new chest();
         String choice="";
 
        int turn = 0;
@@ -96,21 +96,22 @@ System.out.println("That is not a valid input");
              continue;
              }
             turn++;
+             chest.Chest(player);
 player.multiply();
 
-if(!cont.equals("lose")){
-if(turn==2){
-    cont=com.battle(player,normal,1);
+    if(!cont.equals("lose")){
+    if(turn==2){
+    cont=com.battle(player,normal,0);
 }
 
     else if(turn==4){
-        cont=com.battle(player,normal,1);
+        cont=com.battle(player,normal,0);
     }
    else if(turn==6){
-        cont=com.battle(player,normal,1);
+        cont=com.battle(player,normal,0);
     }
     else if(turn==8){
-        cont=com.battle(player,normal,1);
+        cont=com.battle(player,normal,0);
     }
       else if(turn==10){
        cont=com.battle(player,boss,1);
@@ -185,46 +186,3 @@ if(turn==2){
 
     }}
 
-
-
-
-   /* public  float exp(){
-
-
-
-        int z = reservoir.currentTurn(0)  ;
-
-
-        for (int i = 0; i < z; i++ ){
-
-
-            playerCurrentExp = (playerCurrentExp + (playerCurrentExp * interestRate));
-        }
-
-
-
-
-        return playerCurrentExp ;
-
-    }
-
-    public float price(){
-
-
-
-        int z = reservoir.currentTurn(0)  ;
-
-
-        for (int i = 0; i < z; i++ ){
-
-            if (turnCount % 4 == 0){
-                currentPrice = (currentPrice + (currentPrice * inflationRate));
-            }
-        }
-
-        return currentPrice;
-
-    }
-
-
-}*/
