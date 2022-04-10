@@ -171,7 +171,7 @@ switch(choice) {
         public  void upgrade() {
             int exp= super.exp();
             System.out.println("You currently have " + exp+" exp and all items currently cost "+expcost+".");
-            System.out.println("To upgrade strength type 1.\n"+ " To upgrade defense type 2.\n"+" to upgrade health type 3.\n "+ " Type anything else to leave.");
+            System.out.println("To upgrade strength type 1.\n"+ " To upgrade defense type 2.\n"+" to upgrade health type 3.\n "+ " Type any other number to leave.");
         }
 
         public void upgrade(int choice) {
