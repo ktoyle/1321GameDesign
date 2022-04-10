@@ -1,4 +1,4 @@
-public class helpMenu {
+public class Help {
 
     public static void help(){
 
