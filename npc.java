@@ -335,12 +335,13 @@ player.defend(enemy.attack());
         }
 public int battlewon(Player player){
             int exp=100;
-            player.newexp(exp);
+            player.addexp(exp);
             return exp;
 }
 
 
 
 }
+
 
 
