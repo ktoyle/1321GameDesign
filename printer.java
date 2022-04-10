@@ -34,7 +34,7 @@ public class Printer {
                 "\nLeft = l" +
                 "\nForward = f" +
                 "\nRight = r" +
-                "\nMenu = m\n");
+                "\nHelp menu = h\n");
     }
 
     }
