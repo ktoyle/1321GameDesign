@@ -1,15 +1,12 @@
-public class Driver{
-  public static void main(String [] args){
-    
-    int choice;
- Player player = new Player(3,5,5);
-Enemies enemy = new Enemies(2,5,5);
-reservoir control= new reservoir();
- turncount T = new turncount();
+import java.util.Scanner;
+public class PRACTICE { public static void main(String[] args) {
+ int choice;
+ Player player = new Player(5,10,4);
 
-control.currentTurn(T, player);
-    
-    
-    
-  }
+controls control= new controls();
+ turncount T = new turncount();
+ Printer Printer=new Printer();
+Printer.Welcome();
+int turn=control.currentTurn(T, player);
 }
+                      }
