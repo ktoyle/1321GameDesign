@@ -1,8 +1,4 @@
 
-
-
-
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -83,7 +79,10 @@ private int defendamount;
         this.exp = exp;
         return exp;
     }
-
+public int addexp(int exp){
+        this.exp=this.exp+exp;
+        return this.exp;
+}
     public int newattack(int attack) {
         this.attack = attack + this.attack;
         return this.attack;
@@ -106,7 +105,7 @@ private int defendamount;
 public int stored2=0;
 public float mult=1.2f;
 public int health;
-        public int expcost = 100;
+        public int expcost = 80;
         public Player() {
             super();
 
@@ -127,31 +126,52 @@ public int health;
 
             return stored2;
         }
+        public int stored() {
 
+            return stored2;
+        }
         public void Store() {
             Scanner scan= new Scanner(System.in);
             int choice;
-            System.out.print("");
+            System.out.print("Type one to go store exp and Type 2 to get your exp out of storage ");
             choice=scan.nextInt();
 switch(choice) {
 
     case 1:
-    System.out.print("");
+    System.out.print("You currently have" + super.exp()+". How much exp would you like to store? ");
     int stored = 0;
     stored = scan.nextInt();
+
+        if (stored >super.exp()) {
+            System.out.println("You do not have enough exp to store.");
+            break;
+        }
     int exp = super.exp();
     exp = exp - stored;
 
     stored2 += stored;
+
     newexp(exp);
     break;
-
+    case 2:
+        System.out.print("You currently have " + stored() +" exp stored. How much exp would you like to take out? ");
+        int takeOut=0;
+        takeOut=scan.nextInt();
+        if(takeOut>stored()){
+            System.out.println("You do not have enough to take out.");
+            break;
+        }
+        exp=takeOut;
+        stored2=stored2-takeOut;
+        super.addexp(exp);
+        break;
     default: break;
 }
         }
         public  void upgrade() {
             int exp= super.exp();
-            System.out.print("You have " + exp);
+            System.out.println("You currently have " + exp+" exp and all items currently cost "+expcost+".");
+            System.out.println("To upgrade strength type 1.\n"+ " To upgrade defense type 2.\n"+" to upgrade health type 3.\n "+ " Type anything else to leave.");
         }
 
         public void upgrade(int choice) {
@@ -160,6 +180,7 @@ switch(choice) {
             switch (choice) {
                 case 1:
                     if (exp < expcost) {
+                        System.out.println("You do not have exp to purchase currently");
                         break;
                     }
                     exp = exp - expcost;
@@ -172,7 +193,7 @@ switch(choice) {
                 case 2:
 
                     if (exp < expcost) {
-
+                        System.out.println("You do not have exp to purchase currently");
                         break;
                     }
                     exp = exp - expcost;
@@ -184,6 +205,7 @@ switch(choice) {
 
                 case 3:
                     if (exp < expcost) {
+                        System.out.println("You do not have exp to purchase currently");
                         break;
                     }
                     exp = exp - expcost;
@@ -201,13 +223,14 @@ switch(choice) {
         }
 
         public String choice(int num){
+
             if(num==0){
             System.out.println("You have entered a battle. ");}
           else  if(num==1){
                 System.out.println("You have entered a boss battle. ");
             }
             Scanner scan=new Scanner(System.in);
-            String choice;
+            String choice="";
             if(num==0){
                 System.out.println("Would you like to attack, defend, or run");
                 choice=scan.nextLine();
@@ -216,20 +239,19 @@ switch(choice) {
                 System.out.println("Would you like to attack or defend");
                 choice=scan.nextLine();
             }
-            System.out.println("Would you like to attack, defend, or run");
-            choice=scan.nextLine();
+
             while (!choice.equals("attack")&&!choice.equals("defend")&&!choice.equals("run")){
-                System.out.println("That is not a valid choice enter attack,defend, or run ");
+                System.out.println("That is not a valid choice enter attack, defend, or run ");
                 choice=scan.nextLine();
             }
             return choice;
         }
-      
+
         public String action(Player player, Enemies enemy , String choice,String Enemychoice,int num){
             String run="fail";
             if (choice.equals("attack")&&Enemychoice.equals(("attack"))){
                 enemy.newHealth(player.attack());
-                player.newhealth(enemy.attack());
+                player.newHealth(enemy.attack());
                 System.out.println("You did "+player.attack()+" damage");
                 System.out.println("The enemy did "+enemy.attack()+" damage");
             }
@@ -255,7 +277,7 @@ player.defend(enemy.attack());
 
                       if (choice.equals("attack")&&Enemychoice.equals(("attack"))){
                           enemy.newHealth(player.attack());
-                          player.newhealth(enemy.attack());
+                          player.newHealth(enemy.attack());
                           System.out.println("You did "+player.attack()+" damage");
                           System.out.println("The enemy did "+enemy.attack()+" damage");
                       }
