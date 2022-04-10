@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Printer {
     //printer class for group project
 
@@ -18,28 +19,46 @@ public class Printer {
                 "\nYou must choose a path to follow...." +
                 "\n" +
                 "\nType h to see the controls...");
+        Scanner sc = new Scanner(System.in);
+        String inpupt = sc.next();
+        while (input.equals("h")){
+            if (input.equals("h"){
+            Printer.Controls();}
+        else{System.out.println("That's not a valid input");}}
+       
     }
 
-    public void Controls(String input){ //prints controls
-        if (input.equals("Controls")) {
+    public void Controls(){ //prints controls
+     
             System.out.println("[Controls]" +
                     "\nThe controls for this game include:" +
                     "\nLeft = l" +
                     "\nForward = f" +
                     "\nRight = r" +
-                    "\nMenu");
-        }
+                    "\nMenu = m");
+             Scanner sc = new Scanner(System.in);
+        String inpupt = sc.next();
+             
+            if (input.equals("m"){
+            Printer.Menu();}
+            else{System.out.println("That's not a valid input");}
+                
+                
     }
 
-    //prints out menu
-    public void Menu(String input){ //must take in input from the Driver class
-        if (input.equals("Menu")){
-            System.out.println("[Menu]" +
-                    "\nUpgrade Shop" +
-                    "\nPlayer Stats" +
-                    "\nControls" +
-                    "\nRestart");
-        }
+   public static void Menu(){ //prints out menu
+     System.out.println("[Menu]" +
+                    "\nUpgrade Shop (type u)" +
+                    "\nControls (type c)");
+            Scanner sc = new Scanner(System.in);
+            String input = sc.next();
+            if (input.equals("c")) {
+                helpMenu.help();
+            }
+            else if (input.equals("u")){
+                
+            }
+       else{ System.out.println("That's not a valid input");
     }
 
 }
