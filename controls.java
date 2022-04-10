@@ -33,18 +33,18 @@ Enemies enemy1=new Enemies(3,3,3);
 
         String choice;
 
-       int a = 0;
+       int turnsPassed = 0;
        Combat com=new Combat();
         String cont="";
 
-        while(a < 10&& !cont.equals("lose")&&!cont.equals("win")){
+        while(turnsPassed < 10&& !cont.equals("lose")&&!cont.equals("win")){
 
             com.battle(player,enemy1,0);
 
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
-            System.out.print(a);
+            System.out.print(turnsPassed);
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
@@ -76,8 +76,17 @@ Enemies enemy1=new Enemies(3,3,3);
                continue;
 
             }
+            else if (choice.equals("h")){
 
-            a++;
+               helpMenu.help();
+          }
+           
+            else{
+               System.out.println("Invalid input-Please try again");
+               turnsPassed--;
+           }
+
+            turnsPassed++;
 player.multiply();
 if(!cont.equals("lose")){
     if(a==3){
@@ -88,7 +97,7 @@ if(!cont.equals("lose")){
 
         }
 
-        t.setTurn(a);
+        t.setTurn(turnsPassed);
 
         return t.getTurn();
 
@@ -103,11 +112,11 @@ if(!cont.equals("lose")){
 
         String choice;
 
-        int a = 5;
+        int turnsPassed = 5;
 
 
 
-        while(a < 10){
+        while(turnsPassed < 10){
 
 
 
@@ -139,12 +148,23 @@ System.out.print(a);
 
                 player.upgrade(num);
             }
+            else if (choice.equals("h")){
+
+               helpMenu.help();
+          }
+              
+              else{
+               System.out.println("Invalid input-Please try again");
+               turnsPassed--;
+           }
+            
+            
             System.out.println("Here");
-            a++;
+            turnsPassed++;
 
         }
 
-        t.setTurn(a);
+        t.setTurn(turnsPassed);
 
         return t.getTurn();
 
