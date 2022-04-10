@@ -7,6 +7,11 @@ public class helpMenu {
         System.out.println("r - right");
         System.out.println("l - left");
         System.out.println("h - help");
+        System.out.println("For Combat type: ");
+        System.out.println("attack - to attack");
+        System.out.println("defend - to defend");
+        System.out.println("run - to run");
+        
 
 
 
