@@ -71,7 +71,7 @@ do {
     }
     else if(choice.equals("h")){
         Help Help=new Help();
-        Help.help();
+        Printer.help();
     }
     if (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s")){
 System.out.println("That is not a valid input");
