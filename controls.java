@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class reservoir{
+public class controls{
 
     public int turnCount;
     public  float playerCurrentExp;
@@ -8,7 +8,7 @@ public class reservoir{
     public  float interestRate;
     public float inflationRate;
 
-    public reservoir() {
+    public controls() {
 
         turnCount = 0;
         playerCurrentExp = 1;
@@ -28,76 +28,86 @@ public class reservoir{
     public int currentTurn(turncount t, Player player){
 
         Scanner sc = new Scanner(System.in);
+Enemies normal= new Enemies(4,8,5);
+Enemies boss=new Enemies(8,15,6);
 
-Enemies enemy1=new Enemies(3,3,3);
+        String choice="";
 
-        String choice;
-
-       int turnsPassed = 0;
+       int turn = 0;
        Combat com=new Combat();
         String cont="";
 
-        while(turnsPassed < 10&& !cont.equals("lose")&&!cont.equals("win")){
+        while(turn < 10&& !cont.equals("lose")&&!cont.equals("win")) {
 
-            com.battle(player,enemy1,0);
+do {
+    System.out.println("Where do you want to go");
 
-            System.out.println("Where do you want to go");
+    choice = sc.nextLine();
 
-            choice = sc.nextLine();
-            System.out.print(turnsPassed);
-            if (choice.equals("f")){
+    if (choice.equals("f")) {
 
-                System.out.println("You went forward");
+        System.out.println("You went forward");
 
+    } else if (choice.equals("l")) {
+        System.out.println("You went left");
 
-            }
-            else if (choice.equals("l")){
-                System.out.println("You went left");
-
-            }
-
-            else if (choice.equals("r")){
-                System.out.println("You went right");
+    } else if (choice.equals("r")) {
+        System.out.println("You went right");
 
 
-            }
-            else if (choice.equals("u")){
+    } else if (choice.equals("u")) {
 
 
-                player.upgrade();
-                int num=scanner();
+        player.upgrade();
+        int num = scanner();
 
-                player.upgrade(num);
+        player.upgrade(num);
+
+    } else if (choice.equals("s")) {
+
+        player.Store();
+
+
+    }
+    else if(choice.equals("h")){
+        Help Help=new Help();
+        Help.help();
+    }
+    if (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s")){
+System.out.println("That is not a valid input");
+    }
+}
+
+    while (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s"));
+
+             if (choice.equals("u")){
+
+
+
                 continue;
             }
             else if (choice.equals("s")){
 
-               player.Store();
-               continue;
+
+                continue;
 
             }
-            else if (choice.equals("h")){
-
-               helpMenu.help();
-          }
-           
-            else{
-               System.out.println("Invalid input-Please try again");
-               turnsPassed--;
-           }
-
-            turnsPassed++;
+             else if(choice.equals("h")){
+             continue;
+             }
+            turn++;
 player.multiply();
+
 if(!cont.equals("lose")){
-    if(a==3){
-       cont=com.battle(player,enemy1,1);
+    if(turn==3){
+       cont=com.battle(player,boss,1);
     }
 
             }
 
         }
 
-        t.setTurn(turnsPassed);
+        t.setTurn(turn);
 
         return t.getTurn();
 
@@ -112,18 +122,18 @@ if(!cont.equals("lose")){
 
         String choice;
 
-        int turnsPassed = 5;
+        int a = 5;
 
 
 
-        while(turnsPassed < 10){
+        while(a < 10){
 
 
 
             System.out.println("Where do you want to go");
 
             choice = sc.nextLine();
-System.out.print(a);
+
             if (choice.equals("f")){
 
                 System.out.println("You went forward");
@@ -148,23 +158,13 @@ System.out.print(a);
 
                 player.upgrade(num);
             }
-            else if (choice.equals("h")){
 
-               helpMenu.help();
-          }
-              
-              else{
-               System.out.println("Invalid input-Please try again");
-               turnsPassed--;
-           }
-            
-            
             System.out.println("Here");
-            turnsPassed++;
+            a++;
 
         }
 
-        t.setTurn(turnsPassed);
+        t.setTurn(a);
 
         return t.getTurn();
 
