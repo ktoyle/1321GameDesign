@@ -20,45 +20,45 @@ public class Printer {
                 "\n" +
                 "\nType h to see the controls...");
         Scanner sc = new Scanner(System.in);
-        String inpupt = sc.next();
+        String input = sc.next();
         while (input.equals("h")){
-            if (input.equals("h"){
-            Printer.Controls();}
+            if (input.equals("h")){
+                Printer.Controls();}
         else{System.out.println("That's not a valid input");}}
-       
+
     }
 
-    public void Controls(){ //prints controls
-     
-            System.out.println("[Controls]" +
-                    "\nThe controls for this game include:" +
-                    "\nLeft = l" +
-                    "\nForward = f" +
-                    "\nRight = r" +
-                    "\nMenu = m");
-             Scanner sc = new Scanner(System.in);
-        String inpupt = sc.next();
-             
-            if (input.equals("m"){
+    public static void Controls(){ //prints controls
+
+        System.out.println("[Controls]" +
+                "\nThe controls for this game include:" +
+                "\nLeft = l" +
+                "\nForward = f" +
+                "\nRight = r" +
+                "\nMenu = m");
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+
+        if (input.equals("m")){
             Printer.Menu();}
-            else{System.out.println("That's not a valid input");}
-                
-                
+        else{System.out.println("That's not a valid input");}
+
+
     }
 
-   public static void Menu(){ //prints out menu
-     System.out.println("[Menu]" +
-                    "\nUpgrade Shop (type u)" +
-                    "\nControls (type c)");
-            Scanner sc = new Scanner(System.in);
-            String input = sc.next();
-            if (input.equals("c")) {
-                helpMenu.help();
-            }
-            else if (input.equals("u")){
-                
-            }
-       else{ System.out.println("That's not a valid input");
-    }
+    public static void Menu(){ //prints out menu
+        System.out.println("[Menu]" +
+                "\nUpgrade Shop (type u)" +
+                "\nControls (type c)");
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+        if (input.equals("c")) {
+            helpMenu.help();
+        }
+        else if (input.equals("u")){
 
-}
+        }
+        else{ System.out.println("That's not a valid input");
+        }
+
+    }}
