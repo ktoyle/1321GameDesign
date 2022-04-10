@@ -20,13 +20,16 @@ public class Printer {
                 "\nType s to start or m to see the menu");
         Scanner sc = new Scanner(System.in);
             String input = sc.next();
-            if (input.equals("m")){
+            while (input.equals("m")|| input.equals("s"))
+            {if (input.equals("m")){
                 Printer.Menu();
             }
             else if (input.equals("s"){
                 Sysem.out.println(" ");}
             else {
                  System.out.println("That's not a valid input");}
+        
+        }
 
     }
 
