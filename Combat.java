@@ -20,7 +20,7 @@ class Combat {
             }
             if(player.healthpoints()<=0){
                 battle="lose";
-                System.out.print("You lost game over");
+                System.out.print("You lost. Game over...");
             }
            else if(enemies.healthpoints()<=0){
                if(num1==0){
@@ -29,15 +29,15 @@ class Combat {
                if(num1==1){
                 battle="win";}
                 enemies.battlewon(player);
-                System.out.println("You won and earned "+ enemies.battlewon(player)+ " exp");
+                System.out.println("You won and earned "+ enemies.battlewon(player)+ " exp!");
             }
             else if (choice3.equals("success")){
 
                 break;
             }
            else if(player.healthpoints()>0&& enemies.healthpoints()>0){
-                System.out.println("You have "+ player.healthpoints()+" health left");
-                System.out.println("The enemy has " + enemies.healthpoints()+" health left");
+                System.out.println("You have "+ player.healthpoints()+" health left.");
+                System.out.println("The enemy has " + enemies.healthpoints()+" health left.");
             }
 
         }
