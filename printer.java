@@ -7,7 +7,7 @@ public class Printer {
         System.out.println("");
     }
 
-    public void Welcome(){ //prints welcome screen
+    public static void Welcome(){ //prints welcome screen
         System.out.println("Welcome to Relinquished");
         System.out.println("\n[------------[R]------------]");
         System.out.println("\nIn this game, you are an adventurer. " +
@@ -21,10 +21,9 @@ public class Printer {
                 "\nType h to see the controls...");
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
-        while (input.equals("h")){
             if (input.equals("h")){
                 Printer.Controls();}
-        else{System.out.println("That's not a valid input");}}
+        else{System.out.println("That's not a valid input");}
 
     }
 
@@ -35,30 +34,7 @@ public class Printer {
                 "\nLeft = l" +
                 "\nForward = f" +
                 "\nRight = r" +
-                "\nMenu = m");
-        Scanner sc = new Scanner(System.in);
-        String input = sc.next();
-
-        if (input.equals("m")){
-            Printer.Menu();}
-        else{System.out.println("That's not a valid input");}
-
-
+                "\nMenu = m\n");
     }
 
-    public static void Menu(){ //prints out menu
-        System.out.println("[Menu]" +
-                "\nUpgrade Shop (type u)" +
-                "\nControls (type c)");
-        Scanner sc = new Scanner(System.in);
-        String input = sc.next();
-        if (input.equals("c")) {
-            helpMenu.help();
-        }
-        else if (input.equals("u")){
-
-        }
-        else{ System.out.println("That's not a valid input");
-        }
-
-    }}
+    }
