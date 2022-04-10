@@ -138,7 +138,7 @@ public int health;
 switch(choice) {
 
     case 1:
-    System.out.print("You currently have" + super.exp()+". How much exp would you like to store? ");
+    System.out.print("You currently have " + super.exp()+". How much exp would you like to store? ");
     int stored = 0;
     stored = scan.nextInt();
 
