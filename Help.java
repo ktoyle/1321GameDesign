@@ -7,6 +7,8 @@ public class Help {
         System.out.println("r - right");
         System.out.println("l - left");
         System.out.println("h - help");
+        System.out.println("u - enter shop");
+        System.out.println("s - store xp");
         System.out.println("For Combat type: ");
         System.out.println("attack - to attack");
         System.out.println("defend - to defend");
