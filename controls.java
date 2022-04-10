@@ -99,7 +99,20 @@ System.out.println("That is not a valid input");
 player.multiply();
 
 if(!cont.equals("lose")){
-    if(turn==3){
+if(turn==2){
+    cont=com.battle(player,normal,1);
+}
+
+    else if(turn==4){
+        cont=com.battle(player,normal,1);
+    }
+   else if(turn==6){
+        cont=com.battle(player,normal,1);
+    }
+    else if(turn==8){
+        cont=com.battle(player,normal,1);
+    }
+      else if(turn==10){
        cont=com.battle(player,boss,1);
     }
 
