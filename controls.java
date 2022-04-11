@@ -40,19 +40,19 @@ chest chest=new chest();
         while(turn < 10&& !cont.equals("lose")&&!cont.equals("win")) {
 
 do {
-    System.out.println("Where do you want to go");
+    System.out.println("You have 3 paths in front of you. Where do you want to go?");
 
     choice = sc.nextLine();
 
     if (choice.equals("f")) {
 
-        System.out.println("You went forward");
+        System.out.println("You went forward.");
 
     } else if (choice.equals("l")) {
-        System.out.println("You went left");
+        System.out.println("You went left.");
 
     } else if (choice.equals("r")) {
-        System.out.println("You went right");
+        System.out.println("You went right.");
 
 
     } else if (choice.equals("u")) {
@@ -144,23 +144,23 @@ player.multiply();
 
 
 
-            System.out.println("Where do you want to go");
+            System.out.println("You have 3 paths in front of you. Where do you want to go? ");
 
             choice = sc.nextLine();
 
             if (choice.equals("f")){
 
-                System.out.println("You went forward");
+                System.out.println("You went forward.");
 
 
             }
             else if (choice.equals("l")){
-                System.out.println("You went left");
+                System.out.println("You went left.");
 
             }
 
             else if (choice.equals("r")){
-                System.out.println("You went right");
+                System.out.println("You went right.");
 
 
             }
