@@ -70,7 +70,6 @@ do {
 
     }
     else if(choice.equals("h")){
-        Help Help=new Help();
         Printer.help();
     }
     if (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s")){
