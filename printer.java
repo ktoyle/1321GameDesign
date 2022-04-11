@@ -41,7 +41,7 @@ public class Printer {
                 "\nencounters and you might find yourself falling behind if luck is not on your side."+
                 "\nThe best way to prevent this is by storing your xp. By doing this you can set xp aside, and  " +
                 "\nthe amount you store will compound with interest until you choose to take it out, at which point it will be added " +
-                "\nto the amount of xp you currently have."
+                "\nto the amount of xp you currently have.");
     }
     }
 
