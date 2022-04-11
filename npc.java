@@ -133,7 +133,7 @@ public int health;
         public void Store() {
             Scanner scan= new Scanner(System.in);
             int choice;
-            System.out.println("[Store your EXP]\nType 1 to go store exp and type 2 to get your exp out of storage:");
+            System.out.println("Type 1 to go store exp and type 2 to get your exp out of storage:");
             choice=scan.nextInt();
 switch(choice) {
 
