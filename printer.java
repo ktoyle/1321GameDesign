@@ -30,12 +30,11 @@ public class Printer {
         System.out.println("l - left");
         System.out.println("h - help");
         System.out.println("u - enter shop");
-        System.out.println("s - store xp");
-        System.out.println("For Combat type: ");
+        System.out.println("s - store xp\n");
+        System.out.println("For Combat: ");
         System.out.println("attack - to attack");
         System.out.println("defend - to defend");
         System.out.println("run - to run");
     }
-
     }
 
