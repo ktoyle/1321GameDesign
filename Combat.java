@@ -37,7 +37,7 @@ class Combat {
             }
            else if(player.healthpoints()>0&& enemies.healthpoints()>0){
                 System.out.println("You have "+ player.healthpoints()+" health left.");
-                System.out.println("The enemy has " + enemies.healthpoints()+" health left.");
+                System.out.println("The enemy has " + enemies.healthpoints()+" health left.\n");
             }
 
         }
