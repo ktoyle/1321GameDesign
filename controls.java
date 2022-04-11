@@ -40,7 +40,7 @@ public class controls{
         while(turn < 10&& !cont.equals("lose")&&!cont.equals("win")) {
 
             do {
-                System.out.println("You have 3 paths in front of you. Where do you want to go?");
+                System.out.println("\nYou have 3 paths in front of you. Where do you want to go?");
 
                 choice = sc.nextLine();
 
@@ -143,7 +143,7 @@ public class controls{
 
 
 
-            System.out.println("You have 3 paths in front of you. Where do you want to go? ");
+            System.out.println("\nYou have 3 paths in front of you. Where do you want to go? ");
 
             choice = sc.nextLine();
 
