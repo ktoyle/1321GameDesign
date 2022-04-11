@@ -1,6 +1,6 @@
 class Combat {
     public String battle(Player player,Enemies enemies,int num1){
-       String battle="";
+        String battle="";
 
         player.health(player);
         while(!battle.equals("cont")&&!battle.equals("win") && !battle.equals("lose")){
@@ -22,12 +22,12 @@ class Combat {
                 battle="lose";
                 System.out.print("You lost. Game over...");
             }
-           else if(enemies.healthpoints()<=0){
-               if(num1==0){
-                   battle="cont";
-               }
-               if(num1==1){
-                battle="win";}
+            else if(enemies.healthpoints()<=0){
+                if(num1==0){
+                    battle="cont";
+                }
+                if(num1==1){
+                    battle="win";}
                 enemies.battlewon(player);
                 System.out.println("You won and earned "+ enemies.battlewon(player)+ " exp!");
             }
@@ -35,13 +35,13 @@ class Combat {
 
                 break;
             }
-           else if(player.healthpoints()>0&& enemies.healthpoints()>0){
+            else if(player.healthpoints()>0&& enemies.healthpoints()>0){
                 System.out.println("You have "+ player.healthpoints()+" health left.");
                 System.out.println("The enemy has " + enemies.healthpoints()+" health left.\n");
             }
 
         }
-player.fullheal(player);
+        player.fullheal(player);
 
         return battle;
     }}
