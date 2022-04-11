@@ -35,6 +35,13 @@ public class Printer {
         System.out.println("attack - to attack");
         System.out.println("defend - to defend");
         System.out.println("run - to run");
+        System.out.println("In this game there is an inflation system."+
+                "\nThe cost to upgrade will continuously increase whether or not you choose to purchase an upgrade." +
+                "\nFinding chest and defeating enemies might help combat this issue, however those are random " +
+                "\nencounters and you might find yourself falling behind if luck is not on your side."+
+                "\nThe best way to prevent this is by storing your xp. By doing this you can set xp aside, and  " +
+                "\nthe amount you store will compound with interest until you choose to take it out, at which point it will be added " +
+                "\nto the amount of xp you currently have."
     }
     }
 
