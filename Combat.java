@@ -45,4 +45,3 @@ class Combat {
 
         return battle;
     }}
-
