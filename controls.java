@@ -70,7 +70,7 @@ public class controls{
 
                 }
                 else if(choice.equals("h")){
-                    Printer.help();
+                    printer.help();
                 }
                 if (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s")){
                     System.out.println("That is not a valid input");
@@ -182,4 +182,3 @@ public class controls{
         return t.getTurn();
         
     }}
-
