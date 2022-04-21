@@ -1,9 +1,9 @@
 import java.util.Scanner;
-public class Printer {
+public class printer {
     //printer class for group project
 
     //default constructor
-    Printer(){
+    printer(){
         System.out.println("");
     }
 
@@ -17,7 +17,7 @@ public class Printer {
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
         if (input.equals("h")){
-            Printer.help();}
+            printer.help();}
         else{System.out.println("That's not a valid input");}
 
     }
