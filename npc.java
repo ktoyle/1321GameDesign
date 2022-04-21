@@ -1,4 +1,4 @@
-mport java.util.Random;
+import java.util.Random;
 import java.util.Scanner;
 
 class NPC {
