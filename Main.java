@@ -1,12 +1,13 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class GameProject {
+public class Main {
+
     public static void main(String[] args){
 
 try {
 
-
+    Scanner sc = new Scanner(System.in);
     Player player = new Player(5, 10, 4);
 
     controls control = new controls();
@@ -16,6 +17,13 @@ try {
     int turn = control.currentTurn(T, player);
 }catch (InputMismatchException IME){
     System.out.println("Loading...");
+    System.out.println("Loading took too long- Please refresh (Press Run Again)");
 
+
+
+
+  
+  }
+      
 }
-
+}
