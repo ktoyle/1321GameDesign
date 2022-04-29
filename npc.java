@@ -147,9 +147,14 @@ class Player extends NPC {
                 }
                 int exp = super.exp();
                 exp = exp - stored;
-
+                
+                
                 stored2 += stored;
 
+                
+                System.out.println("You have " + exp + " exp and " + stored2 + " exp stored." );
+
+                
                 newexp(exp);
                 break;
             case 2:
@@ -162,7 +167,12 @@ class Player extends NPC {
                 }
                 exp=takeOut;
                 stored2=stored2-takeOut;
+                
+
+                
                 super.addexp(exp);
+                System.out.println("You have " + super.exp() + " exp and " + stored2 + " exp stored." );
+
                 break;
             default: break;
         }
