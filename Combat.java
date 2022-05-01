@@ -1,8 +1,11 @@
 class Combat {
+
+
     public String battle(Player player,Enemies enemies,int num1){
         String battle="";
 
         player.health(player);
+
         while(!battle.equals("cont")&&!battle.equals("win") && !battle.equals("lose")){
             String choice;
             String choice2;
@@ -42,6 +45,8 @@ class Combat {
 
         }
         player.fullheal(player);
+         enemies.originalhealth(9);
+
 
         return battle;
     }}

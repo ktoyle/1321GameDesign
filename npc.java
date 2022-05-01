@@ -323,7 +323,10 @@ class Player extends NPC {
     public void fullheal(Player player){
         player.originalhealth(health);
 
+
     }
+
+
 }
 
 class Enemies extends NPC {
@@ -347,5 +350,7 @@ class Enemies extends NPC {
         player.addexp(exp);
         return exp;
     }
+
+
 
 }
