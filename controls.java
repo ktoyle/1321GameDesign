@@ -32,6 +32,7 @@ public class controls{
         Enemies boss=new Enemies(8,15,6);
         chest chest=new chest();
         String choice="";
+        String nchoice="";
 
         int turn = 0;
         Combat com=new Combat();
@@ -44,18 +45,20 @@ public class controls{
 
                 choice = sc.nextLine();
 
-                if (choice.equals("f")) {
+                 nchoice = choice.toLowerCase();
+
+                if (nchoice.equals("f")) {
 
                     System.out.println("You went forward.");
 
-                } else if (choice.equals("l")) {
+                } else if (nchoice.equals("l")) {
                     System.out.println("You went left.");
 
-                } else if (choice.equals("r")) {
+                } else if (nchoice.equals("r")) {
                     System.out.println("You went right.");
 
 
-                } else if (choice.equals("u")) {
+                } else if (nchoice.equals("u")) {
 
 
                     player.upgrade();
@@ -63,35 +66,35 @@ public class controls{
 
                     player.upgrade(num);
 
-                } else if (choice.equals("s")) {
+                } else if (nchoice.equals("s")) {
 
                     player.Store();
 
 
                 }
-                else if(choice.equals("h")){
+                else if(nchoice.equals("h")){
                     printer.help();
                 }
-                if (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s")){
+                if (!nchoice.equals("l")&&!nchoice.equals("u")&&!nchoice.equals("f")&&!nchoice.equals("r")&&!nchoice.equals("h")&&!nchoice.equals("s")){
                     System.out.println("That is not a valid input");
                 }
             }
 
-            while (!choice.equals("l")&&!choice.equals("u")&&!choice.equals("f")&&!choice.equals("r")&&!choice.equals("h")&&!choice.equals("s"));
+            while (!nchoice.equals("l")&&!nchoice.equals("u")&&!nchoice.equals("f")&&!nchoice.equals("r")&&!nchoice.equals("h")&&!nchoice.equals("s"));
 
-            if (choice.equals("u")){
+            if (nchoice.equals("u")){
 
 
 
                 continue;
             }
-            else if (choice.equals("s")){
+            else if (nchoice.equals("s")){
 
 
                 continue;
 
             }
-            else if(choice.equals("h")){
+            else if(nchoice.equals("h")){
                 continue;
             }
             turn++;

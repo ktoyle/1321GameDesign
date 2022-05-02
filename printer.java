@@ -16,7 +16,9 @@ public class printer {
                 "\nType h to see the controls:");
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
-        if (input.equals("h")){
+        String ninput;
+        ninput = input.toLowerCase();
+        if (ninput.equals("h")){
             printer.help();}
         else{System.out.println("That's not a valid input");}
 
